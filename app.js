@@ -17,10 +17,12 @@ app.get("/", (req, res) => res.send("Hello again..."))
 
 const port = process.env.PORT || 5000
 
-app.use("/api/users", users);
-app.use("/api/tweets", tweets);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use("/api/users", users);
+app.use("/api/tweets", tweets);
+
 
 app.listen(port, () => console.log(`Service is running on port ${port}`))
