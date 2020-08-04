@@ -20,7 +20,7 @@ module.exports = function validateLoginInput(data) {
     }
 
     return {
-        erros, 
+        errors, 
         isValid: Object.keys(errors).length === 0
     }
 }
