@@ -1,7 +1,7 @@
 import { withRouter } from 'react-router-dom'
 import React, { Component } from 'react'
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
     constructor(props) {
         super(props)
 
