@@ -61,13 +61,13 @@ class LoginForm extends Component {
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            placeHolder='Email'
+                            placeholder='Email'
                         />
                         <br />
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
-                            placeHolder="Password"
+                            placeholder="Password"
                         />
                         <br />
                         <input type="submit" value="Submit" />
