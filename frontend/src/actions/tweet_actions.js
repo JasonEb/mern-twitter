@@ -1,5 +1,4 @@
 import { getTweets, getUserTweets, createTweet } from '../util/tweet_api_util'
-import { receiveUserSignIn } from './session_actions'
 
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS"
 export const RECEIVE_USER_TWEETS = "RECEIVE_USER_TWEETS"
@@ -22,13 +21,13 @@ export const receiveNewTweet = tweet => ({
 
 export const fetchTweets = () => dispatch => (
     getTweets()
-        .then( tweets => dispatch(receiveUserTweets(tweets)))
+        .then( tweets => dispatch(receiveTweets(tweets)))
         .catch(err => console.log(err))
 )
 
 export const fetchUserTweets = id => dispatch => (
     getUserTweets()
-        .then( tweets => dispatch(receiveUserSignIn(tweets)))
+        .then( tweets => dispatch(receiveUserTweets(tweets)))
         .catch( err => console.log(err))
 )
 
