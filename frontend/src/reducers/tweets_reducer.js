@@ -13,6 +13,7 @@ const TweetsReducer = (state= initialState, action) => {
     switch(action.type) {
         case RECEIVE_TWEETS:
             newState.all = action.tweets.data
+            return newState
         case RECEIVE_USER_TWEETS:
             newState.user = action.tweets.data
             return newState
