@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 
 class Tweet extends Component {
     render() {
+        let { user,text } = this.props.tweet
+        let { username } = user
         return (
             <div className="tweet">
-                <h3>{this.props.tweet.text}</h3>
+                <h4>{username}</h4><pre>{text}</pre>
             </div>
         )
     }
