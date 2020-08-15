@@ -7,10 +7,14 @@ const Tweet = require('../../models/Tweet')
 const validateTweetInput = require('../../validations/tweets')
 
 router.get("/", (req, res) => {
-    Tweet.find()
-        .sort({date: -1})
-        .then(tweets => res.json(tweets))
-        .catch(err => res.status(404).json({ notweetsFound: 'No tweets found'}))
+    let queryOptions = { path: 'User', options: {sort:{date: -1}}}
+    Tweet.find().populate('user', 'username email').exec( (err, result) =>{
+        if (err) {
+            return res.status(404).json({ notweetsFound: 'No tweets found'})
+        }
+        console.log("Tweets result", result)
+        return res.json(result)
+    })
 })
 
 router.get('/user/:user_id', (req, res) => {
