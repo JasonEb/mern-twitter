@@ -9,6 +9,7 @@ import SignupFormContainer from './session/signup_form_container'
 
 //Tweets
 import TweetsContainer from './tweets/tweets_container'
+import Profile from './profile/profile'
 
 const App = () => (
     <div>
@@ -19,6 +20,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
             <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
+            <ProtectedRoute exact path="/profile" component={Profile} />
         </Switch>
     </div>
 )

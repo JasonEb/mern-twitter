@@ -21,6 +21,7 @@ export default class Navbar extends Component {
                     <Link to={'/tweets'}>All Tweets</Link>
                     <Link to={'/profile'}>Profile</Link>
                     <Link to={'./new_tweet'}>Create a New Tweet</Link>
+                    <button onClick={this.logoutUser}>Log Out</button>
                 </div>
             )
         } else {

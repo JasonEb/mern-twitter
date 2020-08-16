@@ -12,18 +12,18 @@ router.get("/", (req, res) => {
         if (err) {
             return res.status(404).json({ notweetsFound: 'No tweets found'})
         }
-        console.log("Tweets result", result)
         return res.json(result)
     })
 })
 
 router.get('/user/:user_id', (req, res) => {
     const {user_id} = req.params
-    Tweet.find({user: user_id})
-        .then(tweets => res.json(tweets))
-        .catch(err => {
-            res.status(404).json({notweetsFound: 'No tweets found'})
-        })
+    Tweet.find({user: user_id}).populate('user', 'username email').exec( (err, result) =>{
+        if (err) {
+            return res.status(404).json({ notweetsFound: 'No tweets found'})
+        }
+        return res.json(result)
+    })
 })
 
 router.get('/:id', (req, res) => {
