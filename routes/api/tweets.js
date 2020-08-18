@@ -44,6 +44,7 @@ router.post('/',
             return res.status(400).json(errors)
         }
 
+
         const newTweet = new Tweet({
             text: req.body.text,
             user: req.user.id
