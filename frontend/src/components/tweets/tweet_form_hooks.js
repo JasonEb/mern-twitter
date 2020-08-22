@@ -9,7 +9,7 @@ const TweetFormHooks = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(composeTweet(text))
+        dispatch(composeTweet({text: text})).then( setText(''))
     }
 
     const update = (e) => {
