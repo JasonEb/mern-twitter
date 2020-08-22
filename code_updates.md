@@ -2,14 +2,14 @@
 This is the updated code I've came up with while doing App Academy Online's MERN TWitter Project at the end of their MERN Stack curriculum. 
 
 ## Essential Updates
-- Add config.keys
-- Add passport.js / jwt util file that wasn't present before
-- Update Users reference string
+- x Add config.keys
+- x Add passport.js / jwt util file that wasn't present before
+- x Update Users reference string
     - https://open.appacademy.io/learn/full-stack-online/mern-stack-curriculum/mongoose-models
-- Update React 
+- x Update React 
 
 ## Mongo Atlas
-- Cluster0 name requirement in URI
+- x Cluster0 name requirement in URI
 
 ## Setup Instructions
 - Making sure to run front-end install
@@ -27,6 +27,26 @@ Maybe you should make this an alternative branch.
 ## Unsorted
 - bodyparse import priority 
 - Mongoose populate implementation
-- Axios post call requiring a data version
+- Do we need a new tweet entitity in the schema?
+    - https://open.appacademy.io/learn/full-stack-online/mern-stack-curriculum/frontend-tweets
+- Seeding demonstration
+
+
+### Core
+1.) Back-End installation issues
+- npm run server, no `config` files with keys.js and passport.js
+    - `config` is actually .gitignored. propose qol change then
+    - `passport.js` catches users reference change early 
+
+2.) Front-end installation issues
+
+# QOL
+- config file templates
+- seeding 
+- mongolab updated name
 - Redux Dev Tools integration example
 - How to debug
+
+
+
+
