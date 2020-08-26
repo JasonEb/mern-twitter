@@ -50,3 +50,21 @@ Maybe you should make this an alternative branch.
 
 
 
+# MERN Twitter Project 
+
+This is a completed project from App Academy Online's MERN Stack Curriculum. It was a good experience in understanding the MERN stack from a Rails perspective, and I'd like to share some insight for anybody looking at the project. 
+
+x ## Core Fixes
+These fixes are required to run the (xxx)[solution]. 
+    - User model update
+    - React-Scripts update
+x ## Quality of Life
+    - README
+    - Installation Instructions
+    - Config 
+    - MongoAtlas
+    - Seeds
+    - Bodyparse import priority
+    - Redux Dev Tools integration
+    - Debugging Examples
+## React Updates
