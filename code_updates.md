@@ -68,3 +68,7 @@ x ## Quality of Life
     - Redux Dev Tools integration
     - Debugging Examples
 ## React Updates
+- cleaning up state code
+## React Hooks implementation
+
+## Redux Hooks Implementation

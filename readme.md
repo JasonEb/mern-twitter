@@ -60,8 +60,10 @@ In the Tweets Reading, populating the dtatabase with dummy data is
 New to the utils folder is `seed.js`, which is a script that connects to mongo database and uses the [faker.js](https://github.com/marak/Faker.js/) library to populate random tweets for random users with the mongoose models. Helpful for interacting with the database and reading data data.
 
 ### bodyParse Priority
-When initializing `bodyParser` for reading http responses, it has to be called before the api routes.
+When initializing `bodyParser` for reading http responses within `app.js`, it has to be called before the api routes. 
 ```javascript
+//app.js
+
 //These routes won't have bodyParser enabled
 //because bodyParser is initialized afterwards
 app.use("/api/users", users);
@@ -69,8 +71,15 @@ app.use("/api/tweets", tweets);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use("/api/tweets", tweets);
+```
 
-//Initialize bodyParser first for the routes
+Initialize bodyParser first for the routes
+
+```javascript
+//app.js
+
+//Correct
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -83,6 +92,7 @@ The curriculum doesn't demonstrate joining collections with Mongoose in the Twee
 This would become more evident when displaying All Tweets on the front-end. The Tweets API will only return the object ID's of the reference, and not be filled with User data such as username. 
 
 ```javascript
+//routes/api/users.js
 router.get("/", (req, res) => {
     let queryOptions = { path: 'User', options: {sort:{date: -1}}}
     Tweet.find().populate('user', 'username email').exec( (err, result) =>{
@@ -104,6 +114,7 @@ There is more discussion to be had about the constraints and optimization of que
 To install `redux-dev-tool`, the instructions provide a few ways to integrate it into the store. Here's how I enabled it using the `composeWithDevTools` npm package while combining multiple middleware. 
 
 ```javascript
+//store/store.js
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
