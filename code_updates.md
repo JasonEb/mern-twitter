@@ -68,7 +68,20 @@ x ## Quality of Life
     - Redux Dev Tools integration
     - Debugging Examples
 ## React Updates
-- cleaning up state code
-## React Hooks implementation
+- cleaning up state code FOR...
+-x  Profile component
+    - tweets
+-x Login form
+    - errors
+-x Sign-Up 
+    - errors
+- Tweets
+    - tweeta
 
+## React Hooks implementation
+- Nav Bar Container
+- Login Form
+- Sign Up Form
+- Tweet Compose
+- Tweets
 ## Redux Hooks Implementation
